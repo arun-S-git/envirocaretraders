@@ -43,7 +43,7 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
-                <a href="index.html" class="navbar-brand">
+                <a href="index" class="navbar-brand">
                     <img class="img-fluid" src="img/ect_logo.png" alt="Logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -51,10 +51,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="product.html" class="nav-item nav-link">Products</a>
-                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                        <a href="index" class="nav-item nav-link">Home</a>
+                        <a href="about" class="nav-item nav-link">About</a>
+                        <a href="product" class="nav-item nav-link">Products</a>
+                        <a href="contact" class="nav-item nav-link active">Contact</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
                         <p class="m-0"> GST : 33CMEPK8752R2ZA</p>
@@ -106,34 +106,36 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="mb-4">Need a functional contact form?</h3>
-                    <form id="googleForm">
+                    <h3 class="mb-4">Contact Form</h3>
+                    <form action="https://formsubmit.co/karthesanzoho@gmail.com" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="_subject" placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 120px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
+                                <input type="hidden" name="_next" value="https://envirocaretraders.com/">
+                                <input type="hidden" name="_url" value="https://yourdomain.co/contact.html">
                                 <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
                             </div>
                         </div>
@@ -192,31 +194,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <script>
-        document.getElementById('googleForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const formData = new FormData(this);
-
-            fetch('https://docs.google.com/forms/d/e/your_form_id/formResponse', {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert("Form submitted successfully!");
-                } else {
-                    alert("Error: Unable to submit form.");
-                }
-            })
-            .catch(error => {
-                alert("Error: Unable to submit form.");
-                console.error('Error:', error);
-            });
-        });
-    </script>
 </body>
 
 </html>

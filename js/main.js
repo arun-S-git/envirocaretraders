@@ -93,8 +93,6 @@
         dots: true,
         nav: false,
     });
-
-    $('#navbar').load('navbar.html');
     
 })(jQuery);
 
